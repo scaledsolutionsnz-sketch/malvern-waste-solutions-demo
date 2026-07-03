@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malvern Waste Solutions — Rubbish & Recycling Collection, Selwyn District</title>
+<meta name="description" content="Malvern Waste Solutions is a locally owned and operated rubbish and recycling contractor serving the Selwyn District — scheduled kerbside collections, bulk skips, cardboard recycling and event waste.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12211a;          /* deep forest ink */
+    --ink-2:#0d1913;        /* darker panel */
+    --green:#2f7d52;        /* brand green */
+    --green-soft:#3fa46a;   /* eco accent */
+    --amber:#f2b705;        /* hi-vis CTA accent */
+    --amber-deep:#d99e00;
+    --paper:#f6f7f3;        /* off-white base */
+    --paper-2:#eef0e8;
+    --line:rgba(18,33,26,.10);
+    --muted:#5a6b60;
+    --shadow-sm:0 2px 10px rgba(18,33,26,.06);
+    --shadow-md:0 18px 40px -18px rgba(18,33,26,.28);
+    --shadow-lg:0 40px 80px -30px rgba(13,25,19,.55);
+    --r:16px;
+    --maxw:1220px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.display{font-family:'Syne',sans-serif;letter-spacing:-.02em;line-height:1.02}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--green);display:inline-flex;align-items:center;gap:.6rem;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--amber);display:inline-block}
+  .eyebrow.light{color:var(--amber)}
+  .eyebrow.light::before{background:var(--amber)}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:.98rem;
+    padding:15px 28px;border-radius:100px;border:0;cursor:pointer;
+    transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s,filter .25s,background .25s;
+    will-change:transform;
+  }
+  .btn-primary{background:var(--amber);color:#20180a;box-shadow:0 12px 26px -10px rgba(242,183,5,.6)}
+  .btn-primary:hover{transform:translateY(-3px);filter:brightness(1.05);box-shadow:0 18px 34px -12px rgba(242,183,5,.7)}
+  .btn-primary:active{transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-3px);border-color:rgba(255,255,255,.6)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{transform:translateY(-3px);background:#1a3428;box-shadow:var(--shadow-md)}
+  .btn svg{width:18px;height:18px}
+
+  /* ---------- Nav ---------- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s ease}
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:18px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Syne';font-weight:800;font-size:1.15rem;color:#fff;transition:color .4s}
+  .brand .mark{
+    width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:0 0 auto;
+    background:linear-gradient(150deg,var(--green-soft),var(--green));box-shadow:inset 0 1px 0 rgba(255,255,255,.25);
+  }
+  .brand .mark svg{width:22px;height:22px}
+  .brand small{display:block;font-family:'Plus Jakarta Sans';font-weight:500;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-top:-2px}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{color:rgba(255,255,255,.82);font-weight:600;font-size:.94rem;transition:color .2s;position:relative}
+  .nav-links a:not(.btn):hover{color:#fff}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--amber);transition:width .3s}
+  .nav-links a:not(.btn):hover::after{width:100%}
+  .nav-cta{padding:11px 22px;font-size:.9rem}
+  header.nav.scrolled{
+    background:rgba(246,247,243,.85);backdrop-filter:blur(16px);
+    box-shadow:0 1px 0 var(--line),0 10px 30px -20px rgba(18,33,26,.4);
+  }
+  header.nav.scrolled .brand,header.nav.scrolled .nav-links a{color:var(--ink)}
+  header.nav.scrolled .nav-links a{color:#3c4a41}
+  header.nav.scrolled .brand small{opacity:.6}
+  header.nav.scrolled .nav-cta{color:#20180a}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px}
+  .menu-toggle span{display:block;width:26px;height:2px;background:#fff;margin:5px 0;transition:.3s;border-radius:2px}
+  header.nav.scrolled .menu-toggle span{background:var(--ink)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100dvh;display:flex;align-items:center;color:#fff;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06)}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(105deg,rgba(13,25,19,.94) 8%,rgba(15,30,22,.78) 42%,rgba(15,30,22,.30) 100%),
+      linear-gradient(0deg,rgba(13,25,19,.85),transparent 45%);
+  }
+  .hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:60px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end}
+  .hero h1{font-size:clamp(2.6rem,5vw,4rem);font-weight:800;margin:22px 0 20px;max-width:16ch}
+  .hero h1 em{font-style:normal;color:var(--amber)}
+  .hero p.lead{font-size:1.18rem;font-weight:400;color:rgba(255,255,255,.86);max-width:34ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero-side{display:flex;flex-direction:column;gap:14px;padding-bottom:6px}
+  .hero-card{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;
+    padding:18px 20px;backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
+  }
+  .hero-card b{font-family:'Syne';font-size:1.05rem;display:block}
+  .hero-card span{font-size:.9rem;color:rgba(255,255,255,.72)}
+  .hero-badges{display:flex;gap:26px;flex-wrap:wrap;margin-top:40px;padding-top:26px;border-top:1px solid rgba(255,255,255,.16)}
+  .hero-badges .stat b{font-family:'Syne';font-size:1.9rem;color:#fff;display:block;line-height:1}
+  .hero-badges .stat span{font-size:.82rem;color:rgba(255,255,255,.7);letter-spacing:.02em}
+  .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.6);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .scroll-hint .line{width:1px;height:38px;background:linear-gradient(rgba(255,255,255,.6),transparent);animation:drop 2s infinite}
+  @keyframes drop{0%{opacity:0;transform:scaleY(.3);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:bottom}}
+
+  /* ---------- Marquee ---------- */
+  .marquee{background:var(--ink);color:rgba(255,255,255,.9);padding:18px 0;overflow:hidden;white-space:nowrap}
+  .marquee-track{display:inline-flex;gap:0;animation:scroll 32s linear infinite}
+  .marquee-track span{font-family:'Syne';font-weight:700;font-size:1.05rem;padding:0 30px;display:inline-flex;align-items:center;gap:30px}
+  .marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- Sections ---------- */
+  section{position:relative}
+  .pad{padding:110px 0}
+  .sec-head{max-width:640px}
+  .sec-head h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:700;margin:16px 0}
+  .sec-head p{color:var(--muted);font-size:1.08rem}
+
+  /* Intro / about split */
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-media{position:relative}
+  .about-media img{width:100%;height:520px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow-md)}
+  .about-media .float{
+    position:absolute;bottom:-26px;left:-26px;background:#fff;border-radius:16px;padding:22px 24px;
+    box-shadow:var(--shadow-md);border:1px solid var(--line);max-width:240px;
+  }
+  .about-media .float b{font-family:'Syne';font-size:2.4rem;color:var(--green);display:block;line-height:1}
+  .about-media .float span{font-size:.9rem;color:var(--muted)}
+  .about h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;margin:16px 0 20px}
+  .about p{color:#41504a;margin-bottom:18px;font-size:1.05rem}
+  .ticks{list-style:none;margin:26px 0 30px;display:grid;gap:14px}
+  .ticks li{display:flex;gap:12px;align-items:flex-start;font-weight:600;color:var(--ink)}
+  .ticks li svg{flex:0 0 auto;width:22px;height:22px;color:var(--green-soft);margin-top:2px}
+
+  /* Services bento */
+  .services{background:var(--ink);color:#fff;border-radius:44px 44px 0 0;margin-top:-30px}
+  .services .sec-head h2{color:#fff}
+  .services .sec-head p{color:rgba(255,255,255,.7)}
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:52px}
+  .svc{
+    position:relative;border-radius:22px;padding:30px;overflow:hidden;
+    background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.10);
+    transition:transform .4s cubic-bezier(.16,1,.3,1),background .4s,border-color .4s;
+    min-height:230px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .svc:hover{transform:translateY(-6px);background:rgba(255,255,255,.08);border-color:rgba(242,183,5,.4)}
+  .svc .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(242,183,5,.14);color:var(--amber);margin-bottom:auto}
+  .svc .ic svg{width:26px;height:26px}
+  .svc h3{font-size:1.35rem;margin:20px 0 8px;font-weight:700}
+  .svc p{color:rgba(255,255,255,.68);font-size:.96rem}
+  .svc.wide{grid-column:span 3}
+  .svc.reg{grid-column:span 2}
+  .svc.tall{grid-column:span 2}
+  .svc.feature{grid-column:span 2;grid-row:span 2;background:linear-gradient(160deg,rgba(63,164,106,.22),rgba(47,125,82,.05));border-color:rgba(63,164,106,.3);min-height:auto}
+  .svc.feature img{width:100%;height:150px;object-fit:cover;border-radius:14px;margin:18px 0 0}
+  .svc .tag{position:absolute;top:22px;right:22px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);opacity:.9}
+
+  /* Coverage */
+  .coverage{background:var(--paper)}
+  .cov-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .towns span{
+    background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 18px;font-weight:600;font-size:.92rem;
+    box-shadow:var(--shadow-sm);transition:.25s;
+  }
+  .towns span:hover{border-color:var(--green-soft);color:var(--green);transform:translateY(-2px)}
+  .map-card{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--line)}
+  .map-card img{width:100%;height:440px;object-fit:cover}
+  .map-card .pin{position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,33,26,.55),transparent 55%)}
+  .map-card .cap{position:absolute;left:26px;bottom:24px;color:#fff}
+  .map-card .cap b{font-family:'Syne';font-size:1.3rem;display:block}
+  .map-card .cap span{color:rgba(255,255,255,.8);font-size:.92rem}
+
+  /* Gallery */
+  .gallery{background:var(--paper-2)}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px;margin-top:48px}
+  .gal-grid figure{position:relative;overflow:hidden;border-radius:18px;box-shadow:var(--shadow-sm)}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .gal-grid figure:hover img{transform:scale(1.08)}
+  .gal-grid figcaption{position:absolute;left:16px;bottom:14px;color:#fff;font-weight:700;font-family:'Syne';z-index:2;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+  .gal-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,25,19,.6),transparent 50%)}
+  .g-a{grid-column:span 2;grid-row:span 2}
+  .g-b{grid-column:span 2}
+  .g-c{grid-column:span 1}
+  .g-d{grid-column:span 1}
+  .g-e{grid-column:span 2}
+
+  /* Why / stats band */
+  .band{background:var(--ink-2);color:#fff}
+  .band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .band .cell{padding:34px 26px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);transition:.35s}
+  .band .cell:hover{background:rgba(255,255,255,.07);transform:translateY(-5px)}
+  .band .cell b{font-family:'Syne';font-size:2.6rem;color:var(--amber);display:block;line-height:1}
+  .band .cell h4{font-size:1.05rem;margin:12px 0 6px}
+  .band .cell p{color:rgba(255,255,255,.62);font-size:.92rem}
+
+  /* Reviews */
+  .reviews{background:var(--paper)}
+  .rev-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .g-rating{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 22px;box-shadow:var(--shadow-sm)}
+  .g-rating .glogo{font-family:'Syne';font-weight:800;font-size:1.5rem}
+  .g-rating .glogo .b{color:#4285F4}.g-rating .glogo .r{color:#EA4335}.g-rating .glogo .y{color:#FBBC05}.g-rating .glogo .g{color:#34A853}
+  .g-rating .score{font-family:'Syne';font-size:2rem;font-weight:800;line-height:1}
+  .g-rating .stars{color:var(--amber);letter-spacing:2px;font-size:1rem}
+  .g-rating small{color:var(--muted);display:block}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+  .rev{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow-sm);transition:.35s;display:flex;flex-direction:column}
+  .rev:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .rev .head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .rev .av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-family:'Syne';font-weight:800;color:#fff;flex:0 0 auto}
+  .rev .head b{font-size:1rem}
+  .rev .head span{font-size:.82rem;color:var(--muted)}
+  .rev .stars{color:var(--amber);letter-spacing:1px;margin-bottom:10px}
+  .rev p{color:#41504a;font-size:.98rem}
+  .rev .gicon{margin-top:16px;width:22px;height:22px;opacity:.9}
+
+  /* Leave a review funnel */
+  .funnel{background:linear-gradient(160deg,var(--green),var(--ink));color:#fff;border-radius:28px;padding:56px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .funnel::before{content:"";position:absolute;top:-40%;right:-10%;width:420px;height:420px;background:radial-gradient(circle,rgba(242,183,5,.22),transparent 70%);pointer-events:none}
+  .funnel h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:12px}
+  .funnel p{color:rgba(255,255,255,.82);max-width:52ch;margin:0 auto 26px}
+  .starpick{display:inline-flex;gap:10px;margin-bottom:8px}
+  .starpick button{background:none;border:0;cursor:pointer;font-size:2.6rem;line-height:1;color:rgba(255,255,255,.3);transition:transform .2s,color .2s}
+  .starpick button:hover{transform:scale(1.15)}
+  .starpick button.lit{color:var(--amber)}
+  .funnel .hint{font-size:.9rem;color:rgba(255,255,255,.7);min-height:24px}
+
+  /* Contact */
+  .contact{background:var(--paper-2)}
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+  .contact-info h2{font-size:clamp(2rem,4vw,2.7rem);margin:16px 0 18px}
+  .contact-info>p{color:var(--muted);font-size:1.05rem;margin-bottom:28px}
+  .cinfo{display:grid;gap:14px}
+  .cinfo a,.cinfo div{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm);transition:.25s}
+  .cinfo a:hover{transform:translateX(4px);border-color:var(--green-soft)}
+  .cinfo .ic{width:44px;height:44px;border-radius:11px;background:rgba(47,125,82,.1);color:var(--green);display:grid;place-items:center;flex:0 0 auto}
+  .cinfo .ic svg{width:22px;height:22px}
+  .cinfo b{display:block;font-size:1rem}
+  .cinfo span{font-size:.88rem;color:var(--muted)}
+
+  form.enquiry{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow-md)}
+  form.enquiry h3{font-size:1.4rem;margin-bottom:6px}
+  form.enquiry .sub{color:var(--muted);font-size:.94rem;margin-bottom:22px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .field label{font-size:.82rem;font-weight:700;color:#3c4a41}
+  .field input,.field select,.field textarea{
+    font-family:inherit;font-size:.98rem;padding:13px 15px;border:1.5px solid var(--line);border-radius:11px;background:var(--paper);
+    color:var(--ink);transition:.2s;width:100%;
+  }
+  .field textarea{resize:vertical;min-height:120px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green-soft);background:#fff;box-shadow:0 0 0 4px rgba(63,164,106,.12)}
+  form.enquiry button{width:100%;justify-content:center;margin-top:8px}
+
+  /* Footer */
+  footer.site{background:var(--ink);color:rgba(255,255,255,.72);padding:70px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer .brand{color:#fff;margin-bottom:16px}
+  footer p{font-size:.95rem;max-width:34ch}
+  footer h5{color:#fff;font-family:'Syne';font-size:1.05rem;margin-bottom:16px}
+  footer ul{list-style:none;display:grid;gap:10px}
+  footer ul a{font-size:.94rem;transition:.2s}
+  footer ul a:hover{color:var(--amber)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.85rem;color:rgba(255,255,255,.5)}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+  .reveal[data-d="5"]{transition-delay:.4s}
+
+  /* Responsive */
+  @media(max-width:960px){
+    .hero-grid,.about-grid,.cov-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .hero-side{flex-direction:row;flex-wrap:wrap}
+    .about-media img{height:400px}
+    .bento{grid-template-columns:repeat(2,1fr)}
+    .svc.wide,.svc.reg,.svc.tall,.svc.feature{grid-column:span 1;grid-row:auto}
+    .svc.feature img{height:170px}
+    .gal-grid{grid-template-columns:repeat(2,1fr)}
+    .g-a,.g-b,.g-e{grid-column:span 2;grid-row:auto}
+    .g-c,.g-d{grid-column:span 1}
+    .band-grid{grid-template-columns:repeat(2,1fr)}
+    .rev-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:760px){
+    .nav-links{
+      position:fixed;top:0;right:0;height:100dvh;width:min(80vw,320px);flex-direction:column;
+      align-items:flex-start;justify-content:center;gap:26px;padding:40px;background:var(--ink);
+      transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);z-index:99;
+    }
+    .nav-links.open{transform:none}
+    .nav-links a{color:#fff !important;font-size:1.2rem}
+    .menu-toggle{display:block;z-index:100}
+    .pad{padding:80px 0}
+    .funnel{padding:38px 22px}
+    .frow{grid-template-columns:1fr}
+    .hero .wrap{padding-top:110px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+      </span>
+      <span>Malvern Waste<small>Solutions · Selwyn</small></span>
+    </a>
+    <nav class="nav-links" id="menu">
+      <a href="#services">Services</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Get a Quote</a>
+    </nav>
+    <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1900&q=80&auto=format&fit=crop" alt="Row of colour-coded wheelie bins ready for kerbside collection">
+  </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow light">Locally owned · Selwyn District</span>
+        <h1>Rubbish & recycling, <em>sorted.</em></h1>
+        <p class="lead">Reliable scheduled kerbside collections for homes, farms and businesses. Same local team, same trucks, every week.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Book a Collection
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#services" class="btn btn-ghost">Our Services</a>
+        </div>
+        <div class="hero-badges">
+          <div class="stat"><b>25+</b><span>Years serving Selwyn</span></div>
+          <div class="stat"><b>3,500+</b><span>Homes & businesses</span></div>
+          <div class="stat"><b>100%</b><span>Locally owned</span></div>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="hero-card">
+          <b>Weekly & fortnightly runs</b>
+          <span>Bins out the night before — we handle the rest.</span>
+        </div>
+        <div class="hero-card">
+          <b>Call (03) 318 7407</b>
+          <span>Talk to a local, not a call centre.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Domestic Rubbish</span><span>Kerbside Recycling</span><span>Bulk Waste Skips</span><span>Cardboard Recycling</span><span>Event Waste</span><span>Community Sponsor</span>
+    <span>Domestic Rubbish</span><span>Kerbside Recycling</span><span>Bulk Waste Skips</span><span>Cardboard Recycling</span><span>Event Waste</span><span>Community Sponsor</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about pad">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1000&q=80&auto=format&fit=crop" alt="Colour-coded compost, waste and recycling bins side by side">
+      <div class="float">
+        <b>Since '99</b>
+        <span>Started as Malvern Bins — still the same trusted local crew.</span>
+      </div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow reveal">Who we are</span>
+      <h2 class="reveal" data-d="1">A local waste service that actually turns up.</h2>
+      <p class="reveal" data-d="2">Malvern Waste Solutions has been keeping the Selwyn District tidy for over two decades. What started as Malvern Bins is now the region's go-to rubbish and recycling contractor — trusted by households, lifestyle blocks, farms and main-street businesses from Darfield to Rolleston.</p>
+      <p class="reveal" data-d="2">We're locally owned and operated, so when you call you're talking to someone who knows your road, your run and your bin. No franchise runaround — just a dependable service that shows up on the day it says it will.</p>
+      <ul class="ticks">
+        <li class="reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Reliable weekly & fortnightly scheduled runs</li>
+        <li class="reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Domestic, rural, commercial & event waste</li>
+        <li class="reveal" data-d="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Recycling kept out of landfill wherever we can</li>
+      </ul>
+      <a href="#contact" class="btn btn-dark reveal" data-d="4">Talk to the team</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services pad" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow light reveal">What we do</span>
+      <h2 class="reveal" data-d="1">Waste handled, whatever the job.</h2>
+      <p class="reveal" data-d="2">From a single household bin to a full commercial recycling run, we've got the right service and the right schedule for you.</p>
+    </div>
+    <div class="bento">
+      <article class="svc feature reveal">
+        <span class="tag">Most popular</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></div>
+        <h3>Domestic Waste Collection</h3>
+        <p>Scheduled kerbside rubbish and recycling for homes and lifestyle blocks. Pick your bin size and frequency — we'll do the rest.</p>
+        <img src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?w=800&q=80&auto=format&fit=crop" alt="Kerbside recycling bin with recycling symbol">
+      </article>
+      <article class="svc reg reveal" data-d="1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 8l2-4h12l2 4"/></svg></div>
+        <h3>Bulk Waste Skips</h3>
+        <p>Skip bins for clean-ups, renovations and commercial sites — dropped off and picked up on your schedule.</p>
+      </article>
+      <article class="svc reg reveal" data-d="2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8-4 8 4-8 4-8-4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/></svg></div>
+        <h3>Cardboard Recycling</h3>
+        <p>Specialist cardboard collection for retailers and businesses — baled, collected and kept out of landfill.</p>
+      </article>
+      <article class="svc reg reveal" data-d="1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M16 3v4M8 3v4M4 11h16"/></svg></div>
+        <h3>Event Waste</h3>
+        <p>A&P shows, markets, sports days and community events — bins in, bins out, grounds left spotless.</p>
+      </article>
+      <article class="svc reg reveal" data-d="2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>Community Sponsorship</h3>
+        <p>Proud to back local clubs, schools and events across the Malvern and Selwyn community.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage pad" id="coverage">
+  <div class="wrap cov-grid">
+    <div>
+      <span class="eyebrow reveal">Where we collect</span>
+      <h2 class="reveal" data-d="1" style="font-size:clamp(2rem,4vw,2.8rem);font-family:'Syne';margin:16px 0 14px">One district. Covered end to end.</h2>
+      <p class="reveal" data-d="2" style="color:var(--muted);font-size:1.05rem">We run scheduled collections right across the Selwyn District — from the Malvern foothills through to the growing townships on the plains. Not sure if we reach your road? Give us a call and we'll sort you out.</p>
+      <div class="towns reveal" data-d="3">
+        <span>Darfield</span><span>Kirwee</span><span>West Melton</span><span>Rolleston</span><span>Lincoln</span><span>Leeston</span><span>Sheffield</span><span>Springfield</span><span>Coalgate</span><span>Glentunnel</span><span>Southbridge</span><span>Prebbleton</span>
+      </div>
+      <a href="#contact" class="btn btn-dark reveal" data-d="4" style="margin-top:28px">Check your address</a>
+    </div>
+    <div class="map-card reveal" data-d="2">
+      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1000&q=80&auto=format&fit=crop" alt="Hands holding a young green fern representing the Selwyn environment">
+      <div class="pin"></div>
+      <div class="cap"><b>Selwyn District, Canterbury</b><span>Proudly keeping our patch clean and green.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">On the ground</span>
+      <h2 class="reveal" data-d="1">The work, week in, week out.</h2>
+    </div>
+    <div class="gal-grid">
+      <figure class="g-a reveal"><img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=900&q=80&auto=format&fit=crop" alt="Colour-coded wheelie bins lined up for collection"><figcaption>Kerbside collections</figcaption></figure>
+      <figure class="g-b reveal" data-d="1"><img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800&q=80&auto=format&fit=crop" alt="Compost, waste and recycling bins clearly labelled"><figcaption>Sorted recycling</figcaption></figure>
+      <figure class="g-c reveal" data-d="2"><img src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?w=600&q=80&auto=format&fit=crop" alt="Recycling bin with recycling symbol"><figcaption>Recycle</figcaption></figure>
+      <figure class="g-d reveal" data-d="3"><img src="https://images.unsplash.com/photo-1571727153934-b9e0059b7ab2?w=600&q=80&auto=format&fit=crop" alt="Sorted plastic bottles ready for recycling"><figcaption>Plastics</figcaption></figure>
+      <figure class="g-e reveal" data-d="2"><img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=800&q=80&auto=format&fit=crop" alt="Cardboard and stock in a commercial warehouse for recycling"><figcaption>Commercial cardboard</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="band pad">
+  <div class="wrap">
+    <div class="sec-head" style="max-width:560px">
+      <span class="eyebrow light reveal">Why locals stick with us</span>
+      <h2 class="reveal" data-d="1" style="color:#fff;font-family:'Syne';font-size:clamp(2rem,4vw,2.8rem);margin:16px 0 40px">Dependable is the whole point.</h2>
+    </div>
+    <div class="band-grid">
+      <div class="cell reveal"><b>1</b><h4>One local call</h4><p>Speak to the team that runs your route — no scripts, no waiting.</p></div>
+      <div class="cell reveal" data-d="1"><b>52</b><h4>Weeks a year</h4><p>Rain, shine or frost, your collection runs to schedule.</p></div>
+      <div class="cell reveal" data-d="2"><b>7</b><h4>Bin sizes & options</h4><p>Household, rural or commercial — right-sized for the job.</p></div>
+      <div class="cell reveal" data-d="3"><b>0</b><h4>Lock-in headaches</h4><p>Straightforward pricing and a service you can actually rely on.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews pad" id="reviews">
+  <div class="wrap">
+    <div class="rev-top">
+      <div class="sec-head">
+        <span class="eyebrow reveal">What locals say</span>
+        <h2 class="reveal" data-d="1">Trusted across the district.</h2>
+      </div>
+      <div class="g-rating reveal" data-d="1">
+        <span class="glogo"><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="g">l</span><span class="r">e</span></span>
+        <div>
+          <div class="score">4.9</div>
+          <div class="stars">★★★★★</div>
+          <small>Based on local reviews</small>
+        </div>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <article class="rev reveal">
+        <div class="head"><div class="av" style="background:#2f7d52">HT</div><div><b>Hannah Trewavas</b><span>Darfield</span></div></div>
+        <div class="stars">★★★★★</div>
+        <p>"Been with Malvern Waste for years and they've never missed a collection. Bins always put back tidy. Can't fault the local service."</p>
+        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+      </article>
+      <article class="rev reveal" data-d="1">
+        <div class="head"><div class="av" style="background:#3fa46a">MR</div><div><b>Marcus Rendell</b><span>Rolleston</span></div></div>
+        <div class="stars">★★★★★</div>
+        <p>"Rang on a Tuesday, had a skip on-site by Thursday for our reno. Fair price and they picked it up bang on time. Highly recommend."</p>
+        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+      </article>
+      <article class="rev reveal" data-d="2">
+        <div class="head"><div class="av" style="background:#d99e00">PF</div><div><b>Priya Fenwick</b><span>West Melton café owner</span></div></div>
+        <div class="stars">★★★★★</div>
+        <p>"They collect our cardboard and recycling every week without fail. Genuinely lovely people to deal with and great to support a local business."</p>
+        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+      </article>
+    </div>
+
+    <!-- LEAVE A REVIEW FUNNEL -->
+    <div class="funnel reveal" data-d="1" style="margin-top:56px" id="leave-review">
+      <span class="eyebrow light" style="justify-content:center">Enjoyed our service?</span>
+      <h2 style="margin-top:14px">Leave us a review</h2>
+      <p>We'd love to hear how we're doing. Tap the stars below — it takes ten seconds and it means the world to a small local team.</p>
+      <div class="starpick" id="starpick" role="radiogroup" aria-label="Rate us">
+        <button data-v="1" aria-label="1 star">★</button>
+        <button data-v="2" aria-label="2 stars">★</button>
+        <button data-v="3" aria-label="3 stars">★</button>
+        <button data-v="4" aria-label="4 stars">★</button>
+        <button data-v="5" aria-label="5 stars">★</button>
+      </div>
+      <p class="hint" id="starhint">Tap a star to rate your experience</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact pad" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow reveal">Get in touch</span>
+      <h2 class="reveal" data-d="1">Book a collection or ask us anything.</h2>
+      <p class="reveal" data-d="2">Tell us your address and what you need collected — we'll get you set up on a run that suits. New customers welcome across the whole Selwyn District.</p>
+      <div class="cinfo">
+        <a href="tel:033187407" class="reveal" data-d="2">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><b>(03) 318 7407</b><span>Mon–Fri, local team on the line</span></div>
+        </a>
+        <a href="mailto:info@mws.co.nz" class="reveal" data-d="3">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
+          <div><b>info@mws.co.nz</b><span>Enquiries & account questions</span></div>
+        </a>
+        <div class="reveal" data-d="4">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><b>Selwyn District, Canterbury</b><span>Serving the Malvern district & surrounds</span></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="enquiry reveal" data-d="2" action="https://api.staticforms.xyz/submit" method="post">
+      <input type="hidden" name="apiKey" value="sf_768da8d33927e7f4f241d0a6">
+      <input type="hidden" name="subject" value="New enquiry — Malvern Waste Solutions website">
+      <input type="hidden" name="replyTo" value="@">
+      <h3>Request a quote</h3>
+      <p class="sub">Fill in a few details and we'll be in touch to get you sorted.</p>
+      <div class="frow">
+        <div class="field"><label>First name</label><input type="text" name="firstName" placeholder="Jane" required></div>
+        <div class="field"><label>Last name</label><input type="text" name="lastName" placeholder="Whitwell" required></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.co.nz" required></div>
+        <div class="field"><label>Phone</label><input type="text" name="phone" placeholder="021 123 4567"></div>
+      </div>
+      <div class="field"><label>Town / suburb</label><input type="text" name="business" placeholder="e.g. Darfield, Rolleston, West Melton"></div>
+      <div class="field">
+        <label>What do you need?</label>
+        <select name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option>Domestic rubbish collection</option>
+          <option>Kerbside recycling</option>
+          <option>Bulk waste skip</option>
+          <option>Commercial cardboard recycling</option>
+          <option>Event waste</option>
+          <option>Community sponsorship enquiry</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us your address and what you'd like collected..." required></textarea></div>
+      <button type="submit" class="btn btn-primary">Send Enquiry
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></span>
+          <span>Malvern Waste<small>Solutions · Selwyn</small></span>
+        </a>
+        <p>Locally owned and operated rubbish and recycling contractors, proudly serving the Selwyn District for over 25 years.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Domestic Waste</a></li>
+          <li><a href="#services">Bulk Waste Skips</a></li>
+          <li><a href="#services">Cardboard Recycling</a></li>
+          <li><a href="#services">Event Waste</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:033187407">(03) 318 7407</a></li>
+          <li><a href="mailto:info@mws.co.nz">info@mws.co.nz</a></li>
+          <li><a href="#coverage">Coverage area</a></li>
+          <li><a href="#contact">Request a quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Malvern Waste Solutions. All rights reserved.</span>
+      <span>Selwyn District, Canterbury · Formerly Malvern Bins</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Mobile menu
+  const toggle=document.getElementById('toggle'),menu=document.getElementById('menu');
+  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+  // Reveal on scroll
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Review funnel: 4-5 stars -> Google, 1-3 -> private feedback page
+  const GOOGLE_REVIEW_URL="https://www.google.com/search?q=Malvern+Waste+Solutions+Selwyn#lrd=";
+  const picks=document.querySelectorAll('#starpick button');
+  const hint=document.getElementById('starhint');
+  let hovered=0;
+  const paint=(n)=>picks.forEach(b=>b.classList.toggle('lit',+b.dataset.v<=n));
+  picks.forEach(b=>{
+    b.addEventListener('mouseenter',()=>{hovered=+b.dataset.v;paint(hovered);});
+    b.addEventListener('mouseleave',()=>paint(0));
+    b.addEventListener('click',()=>{
+      const v=+b.dataset.v;paint(v);
+      if(v>=4){
+        hint.textContent="Thank you! Taking you to Google to share your review...";
+        setTimeout(()=>window.open("https://www.google.com/search?q=Malvern+Waste+Solutions+Selwyn+District+reviews","_blank"),700);
+      }else{
+        hint.textContent="Thanks for the honest feedback — let's make it right.";
+        setTimeout(()=>window.location.href="private.html?rating="+v,700);
+      }
+    });
+  });
+</script>
+</body>
+</html>
