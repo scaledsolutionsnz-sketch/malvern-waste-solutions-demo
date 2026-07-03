@@ -161,6 +161,16 @@
   .comm-copy p{color:#41504a;font-size:1.05rem;margin-bottom:16px}
   .comm-copy .pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:10px 18px;font-weight:600;font-size:.92rem;box-shadow:var(--shadow-sm);margin-top:6px}
   .comm-copy .pill svg{width:18px;height:18px;color:var(--green)}
+  .sponsor-wall{margin-top:56px}
+  .sponsor-wall .lead-row{text-align:center;max-width:560px;margin:0 auto 34px}
+  .sponsor-wall h3{font-size:clamp(1.4rem,3vw,1.9rem);font-family:'Syne';margin-bottom:8px}
+  .sponsor-wall p{color:var(--muted)}
+  .sponsor-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+  .sponsor-grid.six{grid-template-columns:repeat(3,1fr)}
+  .logo-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow-sm);aspect-ratio:1.5/1;display:grid;place-items:center;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .logo-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--green-soft)}
+  .logo-card img{width:100%;height:100%;object-fit:contain;filter:saturate(.92)}
+  @media(max-width:760px){.sponsor-grid.six{grid-template-columns:repeat(2,1fr)}}
 
   /* ---------- Sections ---------- */
   section{position:relative}
@@ -604,6 +614,21 @@
       <p class="reveal" data-d="2">Being a local business is about more than collecting the bins. We're proud to sponsor and support the clubs, schools and causes that make the Malvern district and wider Selwyn a great place to live.</p>
       <p class="reveal" data-d="2">That includes getting in behind the <strong>Firefighter Sky Tower Stair Challenge</strong> for Leukaemia &amp; Blood Cancer New Zealand — one of the many local causes we're proud to stand alongside each year.</p>
       <span class="pill reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>Clubs · Schools · Local events</span>
+    </div>
+  </div>
+
+  <div class="wrap sponsor-wall">
+    <div class="lead-row reveal">
+      <h3>Proud to support across Selwyn</h3>
+      <p>A few of the local clubs, brigades and causes we're proud to get behind.</p>
+    </div>
+    <div class="sponsor-grid six">
+      <div class="logo-card reveal"><img src="images/sponsors/sheffield-fire.png" alt="Sheffield Volunteer Fire Brigade"></div>
+      <div class="logo-card reveal" data-d="1"><img src="images/sponsors/firefighter.png" alt="Firefighter Sky Tower Challenge — Leukaemia & Blood Cancer New Zealand"></div>
+      <div class="logo-card reveal" data-d="2"><img src="images/sponsors/autism-nz.png" alt="Autism New Zealand"></div>
+      <div class="logo-card reveal" data-d="3"><img src="images/sponsors/heartkids.png" alt="HeartKids New Zealand"></div>
+      <div class="logo-card reveal" data-d="1"><img src="images/sponsors/menzshed.png" alt="MenzShed Darfield Malvern Inc."></div>
+      <div class="logo-card reveal" data-d="2"><img src="images/sponsors/south-malvern-netball.png" alt="South Malvern Netball Club"></div>
     </div>
   </div>
 </section>
