@@ -165,12 +165,16 @@
   .sponsor-wall .lead-row{text-align:center;max-width:560px;margin:0 auto 34px}
   .sponsor-wall h3{font-size:clamp(1.4rem,3vw,1.9rem);font-family:'Syne';margin-bottom:8px}
   .sponsor-wall p{color:var(--muted)}
-  .sponsor-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-  .sponsor-grid.six{grid-template-columns:repeat(3,1fr)}
-  .logo-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow-sm);aspect-ratio:1.5/1;display:grid;place-items:center;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
-  .logo-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--green-soft)}
-  .logo-card img{width:100%;height:100%;object-fit:contain;filter:saturate(.92)}
-  @media(max-width:760px){.sponsor-grid.six{grid-template-columns:repeat(2,1fr)}}
+  .logo-marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .logo-track{display:flex;align-items:center;gap:64px;width:max-content;background:var(--paper);animation:logoroll 34s linear infinite}
+  .logo-marquee:hover .logo-track{animation-play-state:paused}
+  .logo-track .logo{height:56px;display:flex;align-items:center;flex:0 0 auto}
+  .logo-track .logo img{height:100%;width:auto;object-fit:contain;mix-blend-mode:multiply;opacity:.9;transition:opacity .3s,transform .3s}
+  .logo-track .logo:hover img{opacity:1;transform:scale(1.06)}
+  .logo-track .logo.chip{background:var(--ink);border-radius:14px;padding:10px 22px;height:76px;box-shadow:var(--shadow-sm)}
+  .logo-track .logo.chip img{mix-blend-mode:normal;opacity:1;filter:brightness(1.7) contrast(1.15)}
+  @keyframes logoroll{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.logo-track{animation:none;flex-wrap:wrap;justify-content:center;gap:40px}}
 
   /* ---------- Sections ---------- */
   section{position:relative}
@@ -622,13 +626,22 @@
       <h3>Proud to support across Selwyn</h3>
       <p>A few of the local clubs, brigades and causes we're proud to get behind.</p>
     </div>
-    <div class="sponsor-grid six">
-      <div class="logo-card reveal"><img src="images/sponsors/sheffield-fire.png" alt="Sheffield Volunteer Fire Brigade"></div>
-      <div class="logo-card reveal" data-d="1"><img src="images/sponsors/firefighter.png" alt="Firefighter Sky Tower Challenge — Leukaemia & Blood Cancer New Zealand"></div>
-      <div class="logo-card reveal" data-d="2"><img src="images/sponsors/autism-nz.png" alt="Autism New Zealand"></div>
-      <div class="logo-card reveal" data-d="3"><img src="images/sponsors/heartkids.png" alt="HeartKids New Zealand"></div>
-      <div class="logo-card reveal" data-d="1"><img src="images/sponsors/menzshed.png" alt="MenzShed Darfield Malvern Inc."></div>
-      <div class="logo-card reveal" data-d="2"><img src="images/sponsors/south-malvern-netball.png" alt="South Malvern Netball Club"></div>
+    <div class="logo-marquee reveal">
+      <div class="logo-track">
+        <span class="logo chip"><img src="images/sponsors/sheffield-fire.png" alt="Sheffield Volunteer Fire Brigade"></span>
+        <span class="logo"><img src="images/sponsors/firefighter.png" alt="Firefighter Sky Tower Challenge — Leukaemia & Blood Cancer New Zealand"></span>
+        <span class="logo"><img src="images/sponsors/autism-nz.png" alt="Autism New Zealand"></span>
+        <span class="logo"><img src="images/sponsors/heartkids.png" alt="HeartKids New Zealand"></span>
+        <span class="logo"><img src="images/sponsors/menzshed.png" alt="MenzShed Darfield Malvern Inc."></span>
+        <span class="logo"><img src="images/sponsors/south-malvern-netball.png" alt="South Malvern Netball Club"></span>
+        <!-- duplicate set for seamless loop -->
+        <span class="logo chip" aria-hidden="true"><img src="images/sponsors/sheffield-fire.png" alt=""></span>
+        <span class="logo" aria-hidden="true"><img src="images/sponsors/firefighter.png" alt=""></span>
+        <span class="logo" aria-hidden="true"><img src="images/sponsors/autism-nz.png" alt=""></span>
+        <span class="logo" aria-hidden="true"><img src="images/sponsors/heartkids.png" alt=""></span>
+        <span class="logo" aria-hidden="true"><img src="images/sponsors/menzshed.png" alt=""></span>
+        <span class="logo" aria-hidden="true"><img src="images/sponsors/south-malvern-netball.png" alt=""></span>
+      </div>
     </div>
   </div>
 </section>
