@@ -132,6 +132,36 @@
   .marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber)}
   @keyframes scroll{to{transform:translateX(-50%)}}
 
+  /* ---------- Trust strip ---------- */
+  .trust{background:var(--paper);padding:52px 0}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .trust-item{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-sm);transition:.3s}
+  .trust-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .trust-item .ic{width:48px;height:48px;flex:0 0 auto;border-radius:12px;display:grid;place-items:center;background:rgba(47,125,82,.1);color:var(--green)}
+  .trust-item .ic svg{width:24px;height:24px}
+  .trust-item h4{font-size:1.1rem;margin-bottom:4px}
+  .trust-item p{color:var(--muted);font-size:.92rem}
+
+  /* ---------- Team ---------- */
+  .team{background:var(--paper-2)}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+  .team-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow-sm);transition:.35s;text-align:left}
+  .team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .team-card .av{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-family:'Syne';font-weight:800;font-size:1.4rem;color:#fff;margin-bottom:18px}
+  .team-card h3{font-size:1.3rem}
+  .team-card .role{color:var(--green);font-weight:700;font-size:.86rem;letter-spacing:.04em;text-transform:uppercase;margin:4px 0 12px}
+  .team-card p{color:#41504a;font-size:.96rem}
+
+  /* ---------- Community ---------- */
+  .community{background:var(--paper)}
+  .comm-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .comm-media{border-radius:22px;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--line)}
+  .comm-media img{width:100%;height:auto;display:block}
+  .comm-copy h2{font-size:clamp(2rem,4vw,2.7rem);font-family:'Syne';margin:16px 0 16px}
+  .comm-copy p{color:#41504a;font-size:1.05rem;margin-bottom:16px}
+  .comm-copy .pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:10px 18px;font-weight:600;font-size:.92rem;box-shadow:var(--shadow-sm);margin-top:6px}
+  .comm-copy .pill svg{width:18px;height:18px;color:var(--green)}
+
   /* ---------- Sections ---------- */
   section{position:relative}
   .pad{padding:110px 0}
@@ -278,7 +308,8 @@
 
   /* Footer */
   footer.site{background:var(--ink);color:rgba(255,255,255,.72);padding:70px 0 32px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-bottom a{transition:.2s}.foot-bottom a:hover{color:var(--amber)}
   footer .brand{color:#fff;margin-bottom:16px}
   footer p{font-size:.95rem;max-width:34ch}
   footer h5{color:#fff;font-family:'Syne';font-size:1.05rem;margin-bottom:16px}
@@ -296,7 +327,8 @@
 
   /* Responsive */
   @media(max-width:960px){
-    .hero-grid,.about-grid,.cov-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .hero-grid,.about-grid,.cov-grid,.contact-grid,.comm-grid{grid-template-columns:1fr;gap:40px}
+    .trust-grid,.team-grid{grid-template-columns:1fr}
     .hero-side{flex-direction:row;flex-wrap:wrap}
     .about-media img{height:400px}
     .bento{grid-template-columns:repeat(2,1fr)}
@@ -339,6 +371,7 @@
     <nav class="nav-links" id="menu">
       <a href="#services">Services</a>
       <a href="#coverage">Coverage</a>
+      <a href="#team">Our Team</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
       <a href="#contact" class="btn btn-primary nav-cta">Get a Quote</a>
@@ -350,7 +383,7 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1900&q=80&auto=format&fit=crop" alt="Row of colour-coded wheelie bins ready for kerbside collection">
+    <img src="images/hero.jpg" alt="Malvern Waste Solutions branded green skip bin with a hi-vis crew member in the Selwyn District">
   </div>
   <div class="wrap">
     <div class="hero-grid">
@@ -393,21 +426,39 @@
   </div>
 </div>
 
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="wrap trust-grid">
+    <div class="trust-item reveal">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+      <div><h4>Selwyn locals</h4><p>Owned and run from the Malvern district — not a faceless contractor from out of town.</p></div>
+    </div>
+    <div class="trust-item reveal" data-d="1">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <div><h4>Picked up on schedule</h4><p>Set collection days you can count on — and a call if anything ever changes.</p></div>
+    </div>
+    <div class="trust-item reveal" data-d="2">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19l-3-5 3-5"/><path d="M17 5l3 5-3 5"/><path d="M4 14h9l3-5"/><path d="M20 10h-9L8 15"/></svg></span>
+      <div><h4>Sorted for recycling</h4><p>We separate what can be recycled, so less of your waste ends up in landfill.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about pad">
   <div class="wrap about-grid">
     <div class="about-media reveal">
-      <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1000&q=80&auto=format&fit=crop" alt="Colour-coded compost, waste and recycling bins side by side">
+      <img src="images/bins.jpg" alt="Three Malvern Waste Solutions branded green skip bins on a Selwyn farm paddock">
       <div class="float">
-        <b>Since '99</b>
-        <span>Started as Malvern Bins — still the same trusted local crew.</span>
+        <b>Local &amp; family-run</b>
+        <span>Owned by Kristen &amp; Mick O'Callaghan — the same trusted crew, on the truck and on the phone.</span>
       </div>
     </div>
     <div class="about-copy">
       <span class="eyebrow reveal">Who we are</span>
       <h2 class="reveal" data-d="1">A local waste service that actually turns up.</h2>
       <p class="reveal" data-d="2">Malvern Waste Solutions has been keeping the Selwyn District tidy for over two decades. What started as Malvern Bins is now the region's go-to rubbish and recycling contractor — trusted by households, lifestyle blocks, farms and main-street businesses from Darfield to Rolleston.</p>
-      <p class="reveal" data-d="2">We're locally owned and operated, so when you call you're talking to someone who knows your road, your run and your bin. No franchise runaround — just a dependable service that shows up on the day it says it will.</p>
+      <p class="reveal" data-d="2">We're owned and run by Kristen and Mick O'Callaghan, so when you call you're talking to someone who knows your road, your run and your bin. No franchise runaround — just a dependable local service that shows up on the day it says it will.</p>
       <ul class="ticks">
         <li class="reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Reliable weekly & fortnightly scheduled runs</li>
         <li class="reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Domestic, rural, commercial & event waste</li>
@@ -430,14 +481,14 @@
       <article class="svc feature reveal">
         <span class="tag">Most popular</span>
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg></div>
-        <h3>Domestic Waste Collection</h3>
-        <p>Scheduled kerbside rubbish and recycling for homes and lifestyle blocks. Pick your bin size and frequency — we'll do the rest.</p>
-        <img src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?w=800&q=80&auto=format&fit=crop" alt="Kerbside recycling bin with recycling symbol">
+        <h3>Wheelie Bin Collection</h3>
+        <p>Scheduled kerbside rubbish and recycling for Selwyn homes and lifestyle blocks. Pick your bin size and frequency — we'll do the rest.</p>
+        <img src="images/truck.jpg" alt="Malvern Waste Solutions kerbside recycling truck on a Selwyn road">
       </article>
       <article class="svc reg reveal" data-d="1">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 8l2-4h12l2 4"/></svg></div>
-        <h3>Bulk Waste Skips</h3>
-        <p>Skip bins for clean-ups, renovations and commercial sites — dropped off and picked up on your schedule.</p>
+        <h3>Bulk Waste Skips &amp; Bin Hire</h3>
+        <p>Walk-in and standard skips dropped to your place for clean-ups, renos and clear-outs — picked up on your schedule.</p>
       </article>
       <article class="svc reg reveal" data-d="2">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8-4 8 4-8 4-8-4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/></svg></div>
@@ -445,14 +496,29 @@
         <p>Specialist cardboard collection for retailers and businesses — baled, collected and kept out of landfill.</p>
       </article>
       <article class="svc reg reveal" data-d="1">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M16 3v4M8 3v4M4 11h16"/></svg></div>
-        <h3>Event Waste</h3>
-        <p>A&P shows, markets, sports days and community events — bins in, bins out, grounds left spotless.</p>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19l-3-5 3-5"/><path d="M17 5l3 5-3 5"/><path d="M4 14h9l3-5"/><path d="M20 10h-9L8 15"/></svg></div>
+        <h3>Recycling &amp; Green Waste</h3>
+        <p>Cardboard, glass and garden waste separated and sent for recycling — not landfill.</p>
       </article>
       <article class="svc reg reveal" data-d="2">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
-        <h3>Community Sponsorship</h3>
-        <p>Proud to back local clubs, schools and events across the Malvern and Selwyn community.</p>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-9 4 5 3-7 4 11"/><path d="M3 21h18"/></svg></div>
+        <h3>Rural &amp; Farm Waste</h3>
+        <p>Baleage wrap, drums, old fencing and yard rubbish cleared from properties across the Malvern district.</p>
+      </article>
+      <article class="svc reg reveal" data-d="1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Construction &amp; Demolition</h3>
+        <p>Builders' waste and site bins for new builds and demo jobs across Selwyn and wider Canterbury.</p>
+      </article>
+      <article class="svc reg reveal" data-d="2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M16 3v4M8 3v4M4 11h16"/></svg></div>
+        <h3>Event Waste</h3>
+        <p>A&amp;P shows, markets, sports days and community events — bins in, bins out, grounds left spotless.</p>
+      </article>
+      <article class="svc reg reveal" data-d="1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg></div>
+        <h3>Bulk &amp; One-Off Clean-Ups</h3>
+        <p>Shed clear-outs, moving day and estate tidy-ups handled in a single visit.</p>
       </article>
     </div>
   </div>
@@ -486,11 +552,58 @@
       <h2 class="reveal" data-d="1">The work, week in, week out.</h2>
     </div>
     <div class="gal-grid">
-      <figure class="g-a reveal"><img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=900&q=80&auto=format&fit=crop" alt="Colour-coded wheelie bins lined up for collection"><figcaption>Kerbside collections</figcaption></figure>
-      <figure class="g-b reveal" data-d="1"><img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800&q=80&auto=format&fit=crop" alt="Compost, waste and recycling bins clearly labelled"><figcaption>Sorted recycling</figcaption></figure>
-      <figure class="g-c reveal" data-d="2"><img src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?w=600&q=80&auto=format&fit=crop" alt="Recycling bin with recycling symbol"><figcaption>Recycle</figcaption></figure>
-      <figure class="g-d reveal" data-d="3"><img src="https://images.unsplash.com/photo-1571727153934-b9e0059b7ab2?w=600&q=80&auto=format&fit=crop" alt="Sorted plastic bottles ready for recycling"><figcaption>Plastics</figcaption></figure>
-      <figure class="g-e reveal" data-d="2"><img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=800&q=80&auto=format&fit=crop" alt="Cardboard and stock in a commercial warehouse for recycling"><figcaption>Commercial cardboard</figcaption></figure>
+      <figure class="g-a reveal"><img src="images/hero.jpg" alt="Malvern Waste Solutions branded skip bin with crew member"><figcaption>Our branded skips</figcaption></figure>
+      <figure class="g-b reveal" data-d="1"><img src="images/truck.jpg" alt="Malvern Waste Solutions kerbside recycling truck"><figcaption>Kerbside recycling</figcaption></figure>
+      <figure class="g-c reveal" data-d="2"><img src="images/bins.jpg" alt="Malvern Waste Solutions skip bins on a farm paddock"><figcaption>Skip hire</figcaption></figure>
+      <figure class="g-d reveal" data-d="3"><img src="https://images.unsplash.com/photo-1571727153934-b9e0059b7ab2?w=600&q=80&auto=format&fit=crop" alt="Sorted plastic bottles ready for recycling"><figcaption>Sorted plastics</figcaption></figure>
+      <figure class="g-e reveal" data-d="2"><img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800&q=80&auto=format&fit=crop" alt="Compost, waste and recycling bins clearly labelled"><figcaption>Recycling sorted</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team pad" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">The people behind the bins</span>
+      <h2 class="reveal" data-d="1">Meet the team.</h2>
+      <p class="reveal" data-d="2">A small, local outfit — when you call, you're talking to the people who actually run it.</p>
+    </div>
+    <div class="team-grid">
+      <article class="team-card reveal">
+        <div class="av" style="background:#2f7d52">KO</div>
+        <h3>Kristen O'Callaghan</h3>
+        <div class="role">Owner / Operations</div>
+        <p>Sorts your bookings, quotes and collection days — and the one who answers the phone.</p>
+      </article>
+      <article class="team-card reveal" data-d="1">
+        <div class="av" style="background:#3fa46a">MO</div>
+        <h3>Mick O'Callaghan</h3>
+        <div class="role">Owner / Operator</div>
+        <p>On the truck and on the ground, handling collections and skip drop-offs across Selwyn.</p>
+      </article>
+      <article class="team-card reveal" data-d="2">
+        <div class="av" style="background:#d99e00">MW</div>
+        <h3>Our Drivers</h3>
+        <div class="role">Collection Crew</div>
+        <p>Local drivers who know the district, keep your site tidy and get the job done on time.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community pad" id="community">
+  <div class="wrap comm-grid">
+    <div class="comm-media reveal">
+      <img src="images/firefighter-fundraiser.jpg" alt="Firefighter Sky Tower Stair Challenge banner for Leukaemia & Blood Cancer New Zealand, supported by Malvern Waste Solutions">
+    </div>
+    <div class="comm-copy">
+      <span class="eyebrow reveal">Backing our community</span>
+      <h2 class="reveal" data-d="1">Proud to give back to Selwyn.</h2>
+      <p class="reveal" data-d="2">Being a local business is about more than collecting the bins. We're proud to sponsor and support the clubs, schools and causes that make the Malvern district and wider Selwyn a great place to live.</p>
+      <p class="reveal" data-d="2">That includes getting in behind the <strong>Firefighter Sky Tower Stair Challenge</strong> for Leukaemia &amp; Blood Cancer New Zealand — one of the many local causes we're proud to stand alongside each year.</p>
+      <span class="pill reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>Clubs · Schools · Local events</span>
     </div>
   </div>
 </section>
@@ -545,6 +658,24 @@
         <div class="head"><div class="av" style="background:#d99e00">PF</div><div><b>Priya Fenwick</b><span>West Melton café owner</span></div></div>
         <div class="stars">★★★★★</div>
         <p>"They collect our cardboard and recycling every week without fail. Genuinely lovely people to deal with and great to support a local business."</p>
+        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+      </article>
+      <article class="rev reveal">
+        <div class="head"><div class="av" style="background:#2f7d52">SM</div><div><b>Sarah M.</b><span>Darfield</span></div></div>
+        <div class="stars">★★★★★</div>
+        <p>"Booked a skip for our shed clean-out and it turned up the morning they said. Easy to deal with and a fair price."</p>
+        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+      </article>
+      <article class="rev reveal" data-d="1">
+        <div class="head"><div class="av" style="background:#3fa46a">DT</div><div><b>Dave T.</b><span>Rolleston</span></div></div>
+        <div class="stars">★★★★★</div>
+        <p>"Bins are picked up like clockwork. When the truck was running late after the storm they actually rang to let us know."</p>
+        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+      </article>
+      <article class="rev reveal" data-d="2">
+        <div class="head"><div class="av" style="background:#d99e00">AP</div><div><b>Andrew P.</b><span>Kirwee</span></div></div>
+        <div class="stars">★★★★★</div>
+        <p>"Cleared a heap of old baleage wrap and fencing off the block. Mick sorted it no fuss — proper local service."</p>
         <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
       </article>
     </div>
@@ -639,10 +770,22 @@
       <div>
         <h5>Services</h5>
         <ul>
-          <li><a href="#services">Domestic Waste</a></li>
-          <li><a href="#services">Bulk Waste Skips</a></li>
+          <li><a href="#services">Wheelie Bin Collection</a></li>
+          <li><a href="#services">Bulk Waste Skips &amp; Hire</a></li>
           <li><a href="#services">Cardboard Recycling</a></li>
+          <li><a href="#services">Rural &amp; Farm Waste</a></li>
+          <li><a href="#services">Construction &amp; Demolition</a></li>
           <li><a href="#services">Event Waste</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="review.html">Leave a review</a></li>
+          <li><a href="#coverage">Coverage area</a></li>
         </ul>
       </div>
       <div>
@@ -650,13 +793,14 @@
         <ul>
           <li><a href="tel:033187407">(03) 318 7407</a></li>
           <li><a href="mailto:info@mws.co.nz">info@mws.co.nz</a></li>
-          <li><a href="#coverage">Coverage area</a></li>
           <li><a href="#contact">Request a quote</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Malvern Waste Solutions. All rights reserved.</span>
+      <span>© 2026 Malvern Waste Solutions. All rights reserved. · <a href="terms.html" style="color:inherit">Terms</a> · <a href="privacy.html" style="color:inherit">Privacy</a></span>
       <span>Selwyn District, Canterbury · Formerly Malvern Bins</span>
     </div>
   </div>
