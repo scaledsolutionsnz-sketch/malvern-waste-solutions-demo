@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Malvern Waste Solutions — Rubbish & Recycling Collection, Selwyn District</title>
-<meta name="description" content="Malvern Waste Solutions is a locally owned and operated rubbish and recycling contractor serving the Selwyn District — scheduled kerbside collections, bulk skips, cardboard recycling and event waste.">
+<title>Malvern Waste Solutions, Rubbish & Recycling Collection, Selwyn District</title>
+<meta name="description" content="Malvern Waste Solutions is a locally owned and operated rubbish and recycling contractor serving the Selwyn District, scheduled kerbside collections, bulk skips, cardboard recycling and event waste.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -98,7 +99,9 @@
   /* ---------- Hero ---------- */
   .hero{position:relative;min-height:100dvh;display:flex;align-items:center;color:#fff;overflow:hidden;isolation:isolate}
   .hero-bg{position:absolute;inset:0;z-index:-2}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+  .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.05);opacity:0;transition:opacity 1.4s ease}
+  .hero-bg img.on{opacity:1}
+  @media (prefers-reduced-motion:reduce){.hero-bg img{transition:none}}
   .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
     linear-gradient(100deg,rgba(10,16,9,.82) 0%,rgba(12,20,11,.55) 42%,rgba(12,20,11,.12) 78%),
     linear-gradient(0deg,rgba(10,16,9,.85),transparent 46%);}
@@ -289,6 +292,9 @@
   .contact-info h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;letter-spacing:-.03em;margin:14px 0 18px}
   .contact-info>p{color:var(--muted);font-size:1.05rem;margin-bottom:28px}
   .cinfo{display:grid;gap:14px}
+  .cinfo a,.cinfo div{min-width:0}
+  .cinfo b{overflow-wrap:anywhere;word-break:break-word}
+  [data-email-text]{overflow-wrap:anywhere}
   .cinfo a,.cinfo div{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;transition:.25s}
   .cinfo a:hover{transform:translateX(4px);border-color:var(--green-soft)}
   .cinfo .ic{width:44px;height:44px;border-radius:50%;background:var(--mist);color:var(--green);display:grid;place-items:center;flex:0 0 auto}
@@ -371,7 +377,7 @@
       <a href="#contact" class="btn btn-primary nav-cta" style="padding:9px 9px 9px 18px;font-size:.9rem">Get a Quote<span class="ic" style="width:30px;height:30px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </nav>
     <div class="nav-side">
-      <a href="tel:033187407" class="nav-phone">(03) 318 7407</a>
+      <a href="tel:08003187407" class="nav-phone">0800 318 7407</a>
       <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -379,8 +385,10 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-bg">
-    <img src="images/hero.jpg" alt="Malvern Waste Solutions branded green skip bin with a hi-vis crew member in the Selwyn District">
+  <div class="hero-bg" id="heroMedia">
+    <img class="on" src="images/hero.jpg" alt="Malvern Waste Solutions branded green skip bin with a hi-vis crew member in the Selwyn District" fetchpriority="high">
+    <img src="images/truck.jpg" alt="Malvern Waste Solutions truck on a Selwyn road" loading="lazy">
+    <img src="images/bins.jpg" alt="Malvern Waste Solutions skip bins on a farm paddock" loading="lazy">
   </div>
   <div class="wrap">
     <div class="hero-body">
@@ -393,8 +401,9 @@
       </div>
       <div class="socials">
         <a href="https://www.facebook.com/MalvernWasteSolutions/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
-        <a href="tel:033187407" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
-        <a href="mailto:info@mws.co.nz" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></a>
+        <a href="https://www.instagram.com/explore/search/keyword/?q=Malvern%20Waste%20Solutions" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2 0 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c0-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 5a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2Zm6.1-8.1a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg></a>
+        <a href="https://www.tiktok.com/search?q=Malvern%20Waste%20Solutions" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a5 5 0 0 1-1.2-3.3h-3v13.1a2.9 2.9 0 1 1-2.1-2.8V9.7a6 6 0 1 0 5.1 5.9V9.2a8 8 0 0 0 4.6 1.5V7.6a4.8 4.8 0 0 1-3.4-1.8Z"/></svg></a>
+        <a href="#" data-gmail data-user="malvernwastesolutions2025" data-domain="gmail.com" data-su="Enquiry%20for%20Malvern%20Waste%20Solutions" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></a>
       </div>
       <div class="hero-badges">
         <div class="stat"><b>25+</b><span>Years serving Selwyn</span></div>
@@ -406,7 +415,7 @@
   <div class="preview">
     <div class="thumb"><img src="images/truck.jpg" alt="Malvern Waste Solutions recycling truck"></div>
     <div>
-      <div class="p-text">Weekly &amp; fortnightly runs<span>Bins out the night before — we handle the rest.</span></div>
+      <div class="p-text">Weekly &amp; fortnightly runs<span>Bins out the night before, we handle the rest.</span></div>
       <a href="#services" class="btn-mini">Our services<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
   </div>
@@ -415,8 +424,8 @@
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Domestic Rubbish</span><span>Kerbside Recycling</span><span>Bulk Waste Skips</span><span>Cardboard Recycling</span><span>Event Waste</span><span>Community Sponsor</span>
-    <span>Domestic Rubbish</span><span>Kerbside Recycling</span><span>Bulk Waste Skips</span><span>Cardboard Recycling</span><span>Event Waste</span><span>Community Sponsor</span>
+    <span>Domestic Rubbish</span><span>Bulk Waste Skips</span><span>Cardboard Recycling</span><span>Rural &amp; Farm Waste</span><span>Event Waste</span><span>Community Sponsor</span>
+    <span>Domestic Rubbish</span><span>Bulk Waste Skips</span><span>Cardboard Recycling</span><span>Rural &amp; Farm Waste</span><span>Event Waste</span><span>Community Sponsor</span>
   </div>
 </div>
 
@@ -425,15 +434,15 @@
   <div class="wrap trust-grid">
     <div class="trust-item reveal">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-      <h4>Selwyn locals</h4><p>Owned and run from the Malvern district — not a faceless contractor from out of town.</p>
+      <h4>Selwyn locals</h4><p>Owned and run from the Malvern district, not a faceless contractor from out of town.</p>
     </div>
     <div class="trust-item reveal" data-d="1">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-      <h4>Picked up on schedule</h4><p>Set collection days you can count on — and a call if anything ever changes.</p>
+      <h4>Picked up on schedule</h4><p>Set collection days you can count on, and a call if anything ever changes.</p>
     </div>
     <div class="trust-item reveal" data-d="2">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19l-3-5 3-5"/><path d="M17 5l3 5-3 5"/><path d="M4 14h9l3-5"/><path d="M20 10h-9L8 15"/></svg></span>
-      <h4>Sorted for recycling</h4><p>We separate what can be recycled, so less of your waste ends up in landfill.</p>
+      <h4>Cardboard recycling</h4><p>Business cardboard collected and baled, with general recycling coming soon.</p>
     </div>
   </div>
 </section>
@@ -445,18 +454,18 @@
       <img src="images/bins.jpg" alt="Three Malvern Waste Solutions branded green skip bins on a Selwyn farm paddock">
       <div class="float">
         <b>Local &amp; family-run</b>
-        <span>Owned by Kristen &amp; Mick O'Callaghan — the same trusted crew, on the truck and on the phone.</span>
+        <span>Owned by Kristen &amp; Mick O'Callaghan, the same trusted crew, on the truck and on the phone.</span>
       </div>
     </div>
     <div class="about-copy">
       <span class="eyebrow reveal">Who we are</span>
       <h2 class="reveal" data-d="1">A local waste service that actually turns up.</h2>
-      <p class="reveal" data-d="2">Malvern Waste Solutions has been keeping the Selwyn District tidy for over two decades. What started as Malvern Bins is now the region's go-to rubbish and recycling contractor — trusted by households, lifestyle blocks, farms and main-street businesses from Darfield to Rolleston.</p>
-      <p class="reveal" data-d="2">We're owned and run by Kristen and Mick O'Callaghan, so when you call you're talking to someone who knows your road, your run and your bin. No franchise runaround — just a dependable local service that shows up on the day it says it will.</p>
+      <p class="reveal" data-d="2">Malvern Waste Solutions has been keeping the Selwyn District tidy for over two decades. What started as Malvern Bins is now the region's go-to rubbish and recycling contractor, trusted by households, lifestyle blocks, farms and main-street businesses from Darfield to Rolleston.</p>
+      <p class="reveal" data-d="2">We're owned and run by Kristen and Mick O'Callaghan, so when you call you're talking to someone who knows your road, your run and your bin. No franchise runaround, just a dependable local service that shows up on the day it says it will.</p>
       <ul class="ticks">
         <li class="reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Reliable weekly & fortnightly scheduled runs</li>
         <li class="reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Domestic, rural, commercial & event waste</li>
-        <li class="reveal" data-d="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Recycling kept out of landfill wherever we can</li>
+        <li class="reveal" data-d="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cardboard collected and baled, general recycling coming soon</li>
       </ul>
       <a href="#contact" class="btn btn-dark reveal" data-d="4">Talk to the team<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
@@ -483,17 +492,17 @@
       <article class="card reveal" data-d="1">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 8l2-4h12l2 4"/></svg></div>
         <h3>Bulk Waste Skips &amp; Bin Hire</h3>
-        <p>Walk-in and standard skips dropped to your place for clean-ups, renos and clear-outs — picked up on your schedule.</p>
+        <p>Walk-in and standard skips dropped to your place for clean-ups, renos and clear-outs, picked up on your schedule.</p>
       </article>
       <article class="card reveal" data-d="2">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8-4 8 4-8 4-8-4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/></svg></div>
         <h3>Cardboard Recycling</h3>
-        <p>Specialist cardboard collection for retailers and businesses — baled, collected and kept out of landfill.</p>
+        <p>Specialist cardboard collection for retailers and businesses, baled, collected and kept out of landfill.</p>
       </article>
       <article class="card reveal" data-d="1">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19l-3-5 3-5"/><path d="M17 5l3 5-3 5"/><path d="M4 14h9l3-5"/><path d="M20 10h-9L8 15"/></svg></div>
-        <h3>Recycling &amp; Green Waste</h3>
-        <p>Cardboard, glass and garden waste separated and sent for recycling — not landfill.</p>
+        <h3>General Recycling <span style="display:inline-block;margin-left:6px;padding:3px 10px;border-radius:100px;background:#e8f3ec;color:#2f7d52;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle">Coming soon</span></h3>
+        <p>General recycling collection is on the way. Cardboard is running now, ring us and we'll add you to the list for the rest.</p>
       </article>
       <article class="card reveal" data-d="2">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l4-9 4 5 3-7 4 11"/><path d="M3 21h18"/></svg></div>
@@ -508,7 +517,7 @@
       <article class="card reveal" data-d="2">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M16 3v4M8 3v4M4 11h16"/></svg></div>
         <h3>Event Waste</h3>
-        <p>A&amp;P shows, markets, sports days and community events — bins in, bins out, grounds left spotless.</p>
+        <p>A&amp;P shows, markets, sports days and community events, bins in, bins out, grounds left spotless.</p>
       </article>
       <article class="card reveal" data-d="1">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg></div>
@@ -525,9 +534,9 @@
     <div>
       <span class="eyebrow reveal">Where we collect</span>
       <h2 class="reveal" data-d="1">One district. Covered end to end.</h2>
-      <p class="reveal" data-d="2">We run scheduled collections right across the Selwyn District — from the Malvern foothills through to the growing townships on the plains. Not sure if we reach your road? Give us a call and we'll sort you out.</p>
+      <p class="reveal" data-d="2">We run scheduled collections right across the Selwyn District, from the Malvern foothills through to the growing townships on the plains. Not sure if we reach your road? Give us a call and we'll sort you out.</p>
       <div class="towns reveal" data-d="3">
-        <span>Darfield</span><span>Kirwee</span><span>West Melton</span><span>Rolleston</span><span>Lincoln</span><span>Leeston</span><span>Sheffield</span><span>Springfield</span><span>Coalgate</span><span>Glentunnel</span><span>Southbridge</span><span>Prebbleton</span>
+        <span>Darfield</span><span>Kirwee</span><span>West Melton</span><span>Rolleston</span><span>Lincoln</span><span>Leeston</span><span>Sheffield</span><span>Springfield</span><span>Coalgate</span><span>Glentunnel</span><span>Hororata</span><span>Mt Hutt</span><span>Rakaia Gorge</span><span>Lake Coleridge</span><span>Burnham</span><span>Dunsandal</span><span>Castle Hill Village</span><span>Kowhai Bush</span><span>Oxford</span>
       </div>
       <a href="#contact" class="btn btn-dark reveal" data-d="4" style="margin-top:28px">Check your address<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
@@ -548,10 +557,10 @@
     </div>
     <div class="gal-grid">
       <figure class="g-a reveal"><img src="images/hero.jpg" alt="Malvern Waste Solutions branded skip bin with crew member"><figcaption>Our branded skips</figcaption></figure>
-      <figure class="g-b reveal" data-d="1"><img src="images/truck.jpg" alt="Malvern Waste Solutions kerbside recycling truck"><figcaption>Kerbside recycling</figcaption></figure>
+      <figure class="g-b reveal" data-d="1"><img src="images/truck.jpg" alt="Malvern Waste Solutions kerbside recycling truck"><figcaption>On the truck</figcaption></figure>
       <figure class="g-c reveal" data-d="2"><img src="images/bins.jpg" alt="Malvern Waste Solutions skip bins on a farm paddock"><figcaption>Skip hire</figcaption></figure>
-      <figure class="g-d reveal" data-d="3"><img src="https://images.unsplash.com/photo-1571727153934-b9e0059b7ab2?w=600&q=80&auto=format&fit=crop" alt="Sorted plastic bottles ready for recycling"><figcaption>Sorted plastics</figcaption></figure>
-      <figure class="g-e reveal" data-d="2"><img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800&q=80&auto=format&fit=crop" alt="Compost, waste and recycling bins clearly labelled"><figcaption>Recycling sorted</figcaption></figure>
+      <figure class="g-d reveal" data-d="3"><img src="images/cardboard-bales.jpg" alt="Bales of collected cardboard stacked for recycling"><figcaption>Cardboard, baled</figcaption></figure>
+      <figure class="g-e reveal" data-d="2"><img src="images/truck.jpg" alt="Malvern Waste Solutions truck out on a collection run"><figcaption>Out on the run</figcaption></figure>
     </div>
   </div>
 </section>
@@ -562,26 +571,26 @@
     <div class="sec-head">
       <span class="eyebrow reveal">The people behind the bins</span>
       <h2 class="reveal" data-d="1">Meet the team.</h2>
-      <p class="reveal" data-d="2">A small, local outfit — when you call, you're talking to the people who actually run it.</p>
+      <p class="reveal" data-d="2">A small, local outfit, when you call, you're talking to the people who actually run it.</p>
     </div>
     <div class="team-grid">
       <article class="team-card reveal">
-        <div class="av" style="background:#2f7d52">KO</div>
-        <h3>Kristen O'Callaghan</h3>
-        <div class="role">Owner / Operations</div>
-        <p>Sorts your bookings, quotes and collection days — and the one who answers the phone.</p>
-      </article>
-      <article class="team-card reveal" data-d="1">
-        <div class="av" style="background:#3fa46a">MO</div>
+        <div class="av" style="background:#2f7d52">MO</div>
         <h3>Mick O'Callaghan</h3>
         <div class="role">Owner / Operator</div>
-        <p>On the truck and on the ground, handling collections and skip drop-offs across Selwyn.</p>
+        <p>On the truck and on the ground, handling collections, skips and cardboard runs across the district.</p>
+      </article>
+      <article class="team-card reveal" data-d="1">
+        <div class="av" style="background:#3fa46a">L</div>
+        <h3>Lisa</h3>
+        <div class="role">Driver</div>
+        <p>Out on the runs every week. We employ good rural folk with good commonsense around your property and stock.</p>
       </article>
       <article class="team-card reveal" data-d="2">
-        <div class="av" style="background:#d99e00">MW</div>
-        <h3>Our Drivers</h3>
-        <div class="role">Collection Crew</div>
-        <p>Local drivers who know the district, keep your site tidy and get the job done on time.</p>
+        <div class="av" style="background:#d99e00">KO</div>
+        <h3>Kristen O'Callaghan</h3>
+        <div class="role">Behind the scenes</div>
+        <p>Accounts and planning. Keeps the bookings, quotes and collection days running so the trucks can.</p>
       </article>
     </div>
   </div>
@@ -591,37 +600,31 @@
 <section class="community pad" id="community">
   <div class="wrap comm-grid">
     <div class="comm-media reveal">
-      <img src="images/firefighter-fundraiser.jpg" alt="Firefighter Sky Tower Stair Challenge banner for Leukaemia & Blood Cancer New Zealand, supported by Malvern Waste Solutions">
+      <img src="images/bins.jpg" alt="Malvern Waste Solutions skip bins out in the Malvern district">
     </div>
     <div class="comm-copy">
       <span class="eyebrow reveal">Backing our community</span>
       <h2 class="reveal" data-d="1">Proud to give back to Selwyn.</h2>
-      <p class="reveal" data-d="2">Being a local business is about more than collecting the bins. We're proud to sponsor and support the clubs, schools and causes that make the Malvern district and wider Selwyn a great place to live.</p>
-      <p class="reveal" data-d="2">That includes getting in behind the <strong>Firefighter Sky Tower Stair Challenge</strong> for Leukaemia &amp; Blood Cancer New Zealand — one of the many local causes we're proud to stand alongside each year.</p>
-      <span class="pill reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>Clubs · Schools · Local events</span>
+      <p class="reveal" data-d="2">Being a local business is about more than collecting the bins. We sponsor the clubs and causes that make the Malvern district a great place to live.</p>
+      <span class="pill reveal" data-d="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>Clubs · Community · Local events</span>
     </div>
   </div>
 
   <div class="wrap sponsor-wall">
     <div class="lead-row reveal">
-      <h3>Proud to support across Selwyn</h3>
-      <p>A few of the local clubs, brigades and causes we're proud to get behind.</p>
+      <h3>Who we're behind right now</h3>
+      <p>The local organisations Malvern Waste Solutions is proud to sponsor.</p>
     </div>
-    <div class="logo-marquee reveal">
-      <div class="logo-track">
-        <span class="logo chip"><img src="images/sponsors/sheffield-fire.png" alt="Sheffield Volunteer Fire Brigade"></span>
-        <span class="logo"><img src="images/sponsors/firefighter.png" alt="Firefighter Sky Tower Challenge — Leukaemia & Blood Cancer New Zealand"></span>
-        <span class="logo"><img src="images/sponsors/autism-nz.png" alt="Autism New Zealand"></span>
-        <span class="logo"><img src="images/sponsors/heartkids.png" alt="HeartKids New Zealand"></span>
-        <span class="logo"><img src="images/sponsors/menzshed.png" alt="MenzShed Darfield Malvern Inc."></span>
-        <span class="logo"><img src="images/sponsors/south-malvern-netball.png" alt="South Malvern Netball Club"></span>
-        <!-- duplicate set for seamless loop -->
-        <span class="logo chip" aria-hidden="true"><img src="images/sponsors/sheffield-fire.png" alt=""></span>
-        <span class="logo" aria-hidden="true"><img src="images/sponsors/firefighter.png" alt=""></span>
-        <span class="logo" aria-hidden="true"><img src="images/sponsors/autism-nz.png" alt=""></span>
-        <span class="logo" aria-hidden="true"><img src="images/sponsors/heartkids.png" alt=""></span>
-        <span class="logo" aria-hidden="true"><img src="images/sponsors/menzshed.png" alt=""></span>
-        <span class="logo" aria-hidden="true"><img src="images/sponsors/south-malvern-netball.png" alt=""></span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:26px">
+      <div class="card reveal" style="text-align:left">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="9" ry="6.5" transform="rotate(-30 12 12)"/><path d="M8.5 9.5l7 5M8.5 14.5l7-5"/></svg></div>
+        <h3>Darfield Rugby Club</h3>
+        <p>Getting in behind local rugby, from the juniors through to the seniors.</p>
+      </div>
+      <div class="card reveal" data-d="1" style="text-align:left">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M5.6 5.6l2.1 2.1M3 12h3M18 12h3M16.3 7.7l2.1-2.1"/><path d="M8 21h8l-1-6a3 3 0 0 0-6 0z"/></svg></div>
+        <h3>Hororata Community Trust</h3>
+        <p>Supporting the Hororata Highland Games and Glow, two of the district's biggest days out.</p>
       </div>
     </div>
   </div>
@@ -635,10 +638,10 @@
       <h2 class="reveal" data-d="1" style="color:#fff;margin:14px 0 40px">Dependable is the whole point.</h2>
     </div>
     <div class="band-grid">
-      <div class="cell reveal"><b>1</b><h4>One local call</h4><p>Speak to the team that runs your route — no scripts, no waiting.</p></div>
+      <div class="cell reveal"><b>1</b><h4>One local call</h4><p>Speak to the team that runs your route, no scripts, no waiting.</p></div>
       <div class="cell reveal" data-d="1"><b>52</b><h4>Weeks a year</h4><p>Rain, shine or frost, your collection runs to schedule.</p></div>
-      <div class="cell reveal" data-d="2"><b>7</b><h4>Bin sizes & options</h4><p>Household, rural or commercial — right-sized for the job.</p></div>
-      <div class="cell reveal" data-d="3"><b>0</b><h4>Lock-in headaches</h4><p>Straightforward pricing and a service you can actually rely on.</p></div>
+      <div class="cell reveal" data-d="2"><b>7</b><h4>Bin sizes & options</h4><p>Household, rural or commercial, right-sized for the job.</p></div>
+      <div class="cell reveal" data-d="3"><b>100%</b><h4>Reliable</h4><p>We stand by our word, with straightforward pricing and a service you can count on.</p></div>
     </div>
   </div>
 </section>
@@ -652,11 +655,8 @@
         <h2 class="reveal" data-d="1">Trusted across the district.</h2>
       </div>
       <div class="g-rating reveal" data-d="1">
-        <span class="glogo"><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="g">l</span><span class="r">e</span></span>
         <div>
-          <div class="score">4.9</div>
-          <div class="stars">★★★★★</div>
-          <small>Based on local reviews</small>
+          <small style="display:inline-block;border:1px solid rgba(255,255,255,.0);padding:0">Example reviews for this demo. Your real Google reviews go here as they come in.</small>
         </div>
       </div>
     </div>
@@ -665,53 +665,40 @@
         <div class="head"><div class="av" style="background:#2f7d52">HT</div><div><b>Hannah Trewavas</b><span>Darfield</span></div></div>
         <div class="stars">★★★★★</div>
         <p>"Been with Malvern Waste for years and they've never missed a collection. Bins always put back tidy. Can't fault the local service."</p>
-        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
       </article>
       <article class="rev reveal" data-d="1">
         <div class="head"><div class="av" style="background:#3fa46a">MR</div><div><b>Marcus Rendell</b><span>Rolleston</span></div></div>
         <div class="stars">★★★★★</div>
         <p>"Rang on a Tuesday, had a skip on-site by Thursday for our reno. Fair price and they picked it up bang on time. Highly recommend."</p>
-        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
       </article>
       <article class="rev reveal" data-d="2">
         <div class="head"><div class="av" style="background:#d99e00">PF</div><div><b>Priya Fenwick</b><span>West Melton café owner</span></div></div>
         <div class="stars">★★★★★</div>
-        <p>"They collect our cardboard and recycling every week without fail. Genuinely lovely people to deal with and great to support a local business."</p>
-        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        <p>"They collect our cardboard every week without fail. Genuinely lovely people to deal with and great to support a local business."</p>
       </article>
       <article class="rev reveal">
         <div class="head"><div class="av" style="background:#2f7d52">SM</div><div><b>Sarah M.</b><span>Darfield</span></div></div>
         <div class="stars">★★★★★</div>
         <p>"Booked a skip for our shed clean-out and it turned up the morning they said. Easy to deal with and a fair price."</p>
-        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
       </article>
       <article class="rev reveal" data-d="1">
         <div class="head"><div class="av" style="background:#3fa46a">DT</div><div><b>Dave T.</b><span>Rolleston</span></div></div>
         <div class="stars">★★★★★</div>
         <p>"Bins are picked up like clockwork. When the truck was running late after the storm they actually rang to let us know."</p>
-        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
       </article>
       <article class="rev reveal" data-d="2">
         <div class="head"><div class="av" style="background:#d99e00">AP</div><div><b>Andrew P.</b><span>Kirwee</span></div></div>
         <div class="stars">★★★★★</div>
-        <p>"Cleared a heap of old baleage wrap and fencing off the block. Mick sorted it no fuss — proper local service."</p>
-        <svg class="gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        <p>"Cleared a heap of old baleage wrap and fencing off the block. Mick sorted it no fuss, proper local service."</p>
       </article>
     </div>
 
-    <!-- LEAVE A REVIEW FUNNEL -->
+    <!-- LEAVE A REVIEW -->
     <div class="funnel reveal" data-d="1" style="margin-top:56px" id="leave-review">
       <span class="eyebrow light" style="justify-content:center">Enjoyed our service?</span>
-      <h2 style="margin-top:14px">Leave us a review</h2>
-      <p>We'd love to hear how we're doing. Tap the stars below — it takes ten seconds and it means the world to a small local team.</p>
-      <div class="starpick" id="starpick" role="radiogroup" aria-label="Rate us">
-        <button data-v="1" aria-label="1 star">★</button>
-        <button data-v="2" aria-label="2 stars">★</button>
-        <button data-v="3" aria-label="3 stars">★</button>
-        <button data-v="4" aria-label="4 stars">★</button>
-        <button data-v="5" aria-label="5 stars">★</button>
-      </div>
-      <p class="hint" id="starhint">Tap a star to rate your experience</p>
+      <h2 style="margin-top:14px">Leave us a Google review</h2>
+      <p>It takes thirty seconds, and it helps the next Selwyn local find a bin service that turns up.</p>
+      <a class="btn btn-primary" href="https://www.google.com/maps/place//data=!4m3!3m2!1s0xa05c1177ac9e1697:0x1ae8a905e1a18dd6!12e1" target="_blank" rel="noopener" style="margin-top:8px">Leave a Google review<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
   </div>
 </section>
@@ -722,15 +709,15 @@
     <div class="contact-info">
       <span class="eyebrow reveal">Get in touch</span>
       <h2 class="reveal" data-d="1">Book a collection or ask us anything.</h2>
-      <p class="reveal" data-d="2">Tell us your address and what you need collected — we'll get you set up on a run that suits. New customers welcome across the whole Selwyn District.</p>
+      <p class="reveal" data-d="2">Tell us your address and what you need collected, we'll get you set up on a run that suits. New customers welcome across the whole Selwyn District.</p>
       <div class="cinfo">
-        <a href="tel:033187407" class="reveal" data-d="2">
+        <a href="tel:08003187407" class="reveal" data-d="2">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          <div><b>(03) 318 7407</b><span>Mon–Fri, local team on the line</span></div>
+          <div><b>0800 318 7407</b><span>Or mobile: 027 489 4109</span></div>
         </a>
-        <a href="mailto:info@mws.co.nz" class="reveal" data-d="3">
+        <a href="#" data-gmail data-user="malvernwastesolutions2025" data-domain="gmail.com" data-su="Enquiry%20for%20Malvern%20Waste%20Solutions" class="reveal" data-d="3">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
-          <div><b>info@mws.co.nz</b><span>Enquiries & account questions</span></div>
+          <div><b data-email-text data-user="malvernwastesolutions2025" data-domain="gmail.com">Email us</b><span>Enquiries &amp; account questions</span></div>
         </a>
         <div class="reveal" data-d="4">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
@@ -739,37 +726,26 @@
       </div>
     </div>
 
-    <form class="enquiry reveal" data-d="2" action="https://api.staticforms.xyz/submit" method="post">
-      <input type="hidden" name="apiKey" value="sf_768da8d33927e7f4f241d0a6">
-      <input type="hidden" name="subject" value="New enquiry — Malvern Waste Solutions website">
-      <input type="hidden" name="replyTo" value="@">
-      <h3>Request a quote</h3>
-      <p class="sub">Fill in a few details and we'll be in touch to get you sorted.</p>
-      <div class="frow">
-        <div class="field"><label>First name</label><input type="text" name="firstName" placeholder="Jane" required></div>
-        <div class="field"><label>Last name</label><input type="text" name="lastName" placeholder="Whitwell" required></div>
-      </div>
-      <div class="frow">
-        <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.co.nz" required></div>
-        <div class="field"><label>Phone</label><input type="text" name="phone" placeholder="021 123 4567"></div>
-      </div>
-      <div class="field"><label>Town / suburb</label><input type="text" name="business" placeholder="e.g. Darfield, Rolleston, West Melton"></div>
-      <div class="field">
-        <label>What do you need?</label>
-        <select name="service" required>
-          <option value="" disabled selected>Select a service</option>
-          <option>Domestic rubbish collection</option>
-          <option>Kerbside recycling</option>
-          <option>Bulk waste skip</option>
-          <option>Commercial cardboard recycling</option>
-          <option>Event waste</option>
-          <option>Community sponsorship enquiry</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us your address and what you'd like collected..." required></textarea></div>
-      <button type="submit" class="btn btn-primary">Send Enquiry<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span></button>
-    </form>
+    <div class="enquiry reveal" data-d="2">
+      <h3>Two ways to reach the team</h3>
+      <p class="sub">Ring for bookings and collection days. Email works well for accounts and anything with photos.</p>
+      <a class="btn btn-primary" href="tel:08003187407" style="width:100%;justify-content:center;margin-top:10px">Call 0800 318 7407<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></a>
+      <a class="btn btn-dark" href="#" data-gmail
+         data-user="malvernwastesolutions2025" data-domain="gmail.com"
+         data-su="Booking%20enquiry%20for%20Malvern%20Waste%20Solutions"
+         data-body="Hi%20Kristen%20and%20Mick%2C%0A%0AI%27d%20like%20to%20get%20set%20up%20on%20a%20run%3A%0A%0AAddress%20or%20town%3A%20%0AWhat%20needs%20collecting%3A%20%0A%0AName%3A%20%0APhone%3A%20"
+         style="width:100%;justify-content:center;margin-top:12px">Email the team<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span></a>
+      <p class="sub" style="margin-top:16px">The email button opens Gmail with the details laid out, so you just fill in the blanks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="pad" style="padding-top:0;background:#fff">
+  <div class="wrap">
+    <div style="border-radius:18px;overflow:hidden;border:1px solid rgba(10,16,9,.1);line-height:0">
+      <iframe title="Malvern Waste Solutions, Selwyn District" src="https://www.google.com/maps?q=Malvern+Waste+Solutions,+Selwyn+District,+Canterbury&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen style="width:100%;height:380px;border:0"></iframe>
+    </div>
   </div>
 </section>
 
@@ -801,15 +777,15 @@
           <li><a href="#team">Our Team</a></li>
           <li><a href="#community">Community</a></li>
           <li><a href="#reviews">Reviews</a></li>
-          <li><a href="review.html">Leave a review</a></li>
+          <li><a href="https://www.google.com/maps/place//data=!4m3!3m2!1s0xa05c1177ac9e1697:0x1ae8a905e1a18dd6!12e1" target="_blank" rel="noopener">Leave a Google review</a></li>
           <li><a href="#coverage">Coverage area</a></li>
         </ul>
       </div>
       <div>
         <h5>Contact</h5>
         <ul>
-          <li><a href="tel:033187407">(03) 318 7407</a></li>
-          <li><a href="mailto:info@mws.co.nz">info@mws.co.nz</a></li>
+          <li><a href="tel:08003187407">0800 318 7407</a></li>
+          <li><a href="#" data-gmail data-user="malvernwastesolutions2025" data-domain="gmail.com" data-su="Enquiry%20for%20Malvern%20Waste%20Solutions"><span data-email-text data-user="malvernwastesolutions2025" data-domain="gmail.com">Email us</span></a></li>
           <li><a href="#contact">Request a quote</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
@@ -840,24 +816,24 @@
   },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Review funnel: 4-5 stars -> Google, 1-3 -> private feedback page
-  const picks=document.querySelectorAll('#starpick button');
-  const hint=document.getElementById('starhint');
-  const paint=(n)=>picks.forEach(b=>b.classList.toggle('lit',+b.dataset.v<=n));
-  picks.forEach(b=>{
-    b.addEventListener('mouseenter',()=>paint(+b.dataset.v));
-    b.addEventListener('mouseleave',()=>paint(0));
-    b.addEventListener('click',()=>{
-      const v=+b.dataset.v;paint(v);
-      if(v>=4){
-        hint.textContent="Thank you! Taking you to Google to share your review...";
-        setTimeout(()=>window.open("https://www.google.com/search?q=Malvern+Waste+Solutions+Selwyn+District+reviews","_blank"),700);
-      }else{
-        hint.textContent="Thanks for the honest feedback — let's make it right.";
-        setTimeout(()=>window.location.href="private.html?rating="+v,700);
-      }
-    });
+  // Hero photo rotation
+  const hm=document.getElementById('heroMedia');
+  if(hm && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const slides=hm.querySelectorAll('img');
+    if(slides.length>1){let i=0;setInterval(()=>{slides[i].classList.remove('on');i=(i+1)%slides.length;slides[i].classList.add('on');},5500);}
+  }
+
+  // Gmail compose links (address assembled here, never in the HTML)
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){
+    var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
+    var su=a.getAttribute('data-su')||'';var body=a.getAttribute('data-body')||'';
+    a.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+su+'&body='+body;
+    a.target='_blank';a.rel='noopener';
   });
+  document.querySelectorAll('[data-email-text]').forEach(function(el){
+    el.textContent=el.getAttribute('data-user')+'@'+el.getAttribute('data-domain');
+  });
+
 </script>
 </body>
 </html>
