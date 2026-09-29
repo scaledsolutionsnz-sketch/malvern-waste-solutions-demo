@@ -1,0 +1,55 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/domestic-waste-services",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/domestic-waste-services/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-we-charge",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-we-charge/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/coverage-area",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/coverage-area/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bulk-waste-skips",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bulk-waste-skips/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
