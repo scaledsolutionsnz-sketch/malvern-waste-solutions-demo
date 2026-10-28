@@ -344,6 +344,8 @@
     .rev-grid{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
     .preview{position:static;width:100%;max-width:400px;margin-top:30px}
+    .hero{flex-direction:column;align-items:stretch;justify-content:center}
+    .hero .preview{width:auto;margin:30px 24px 34px}
     .nav-phone{display:none}
   }
   @media(max-width:760px){
@@ -374,7 +376,6 @@
       <a href="#services">Services</a>
       <a href="https://www.mws.co.nz/contact-us/coverage-area/">Coverage</a>
       <a href="#team">Our Team</a>
-      <a href="#reviews">Reviews</a>
       <a href="https://www.mws.co.nz/contact-us/" class="btn btn-primary nav-cta" style="padding:9px 9px 9px 18px;font-size:.9rem">Get a Quote<span class="ic" style="width:30px;height:30px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </nav>
     <div class="nav-side">
@@ -650,52 +651,8 @@
 <!-- REVIEWS -->
 <section class="reviews pad" id="reviews">
   <div class="wrap">
-    <div class="rev-top">
-      <div class="sec-head">
-        <span class="eyebrow reveal">What locals say</span>
-        <h2 class="reveal" data-d="1">Trusted across the district.</h2>
-      </div>
-      <div class="g-rating reveal" data-d="1">
-        <div>
-          <small style="display:inline-block;border:1px solid rgba(255,255,255,.0);padding:0">Example reviews for this demo. Your real Google reviews go here as they come in.</small>
-        </div>
-      </div>
-    </div>
-    <div class="rev-grid">
-      <article class="rev reveal">
-        <div class="head"><div class="av" style="background:#2f7d52">HT</div><div><b>Hannah Trewavas</b><span>Darfield</span></div></div>
-        <div class="stars">★★★★★</div>
-        <p>"Been with Malvern Waste for years and they've never missed a collection. Bins always put back tidy. Can't fault the local service."</p>
-      </article>
-      <article class="rev reveal" data-d="1">
-        <div class="head"><div class="av" style="background:#3fa46a">MR</div><div><b>Marcus Rendell</b><span>Rolleston</span></div></div>
-        <div class="stars">★★★★★</div>
-        <p>"Rang on a Tuesday, had a skip on-site by Thursday for our reno. Fair price and they picked it up bang on time. Highly recommend."</p>
-      </article>
-      <article class="rev reveal" data-d="2">
-        <div class="head"><div class="av" style="background:#d99e00">PF</div><div><b>Priya Fenwick</b><span>West Melton café owner</span></div></div>
-        <div class="stars">★★★★★</div>
-        <p>"They collect our cardboard every week without fail. Genuinely lovely people to deal with and great to support a local business."</p>
-      </article>
-      <article class="rev reveal">
-        <div class="head"><div class="av" style="background:#2f7d52">SM</div><div><b>Sarah M.</b><span>Darfield</span></div></div>
-        <div class="stars">★★★★★</div>
-        <p>"Booked a skip for our shed clean-out and it turned up the morning they said. Easy to deal with and a fair price."</p>
-      </article>
-      <article class="rev reveal" data-d="1">
-        <div class="head"><div class="av" style="background:#3fa46a">DT</div><div><b>Dave T.</b><span>Rolleston</span></div></div>
-        <div class="stars">★★★★★</div>
-        <p>"Bins are picked up like clockwork. When the truck was running late after the storm they actually rang to let us know."</p>
-      </article>
-      <article class="rev reveal" data-d="2">
-        <div class="head"><div class="av" style="background:#d99e00">AP</div><div><b>Andrew P.</b><span>Kirwee</span></div></div>
-        <div class="stars">★★★★★</div>
-        <p>"Cleared a heap of old baleage wrap and fencing off the block. Mick sorted it no fuss, proper local service."</p>
-      </article>
-    </div>
-
     <!-- LEAVE A REVIEW -->
-    <div class="funnel reveal" data-d="1" style="margin-top:56px" id="leave-review">
+    <div class="funnel reveal" data-d="1" id="leave-review">
       <span class="eyebrow light" style="justify-content:center">Enjoyed our service?</span>
       <h2 style="margin-top:14px">Leave us a Google review</h2>
       <p>It takes thirty seconds, and it helps the next Selwyn local find a bin service that turns up.</p>
@@ -771,7 +728,6 @@
         <ul>
           <li><a href="#team">Our Team</a></li>
           <li><a href="#community">Community</a></li>
-          <li><a href="#reviews">Reviews</a></li>
           <li><a href="https://www.google.com/maps/place//data=!4m3!3m2!1s0xa05c1177ac9e1697:0x1ae8a905e1a18dd6!12e1" target="_blank" rel="noopener">Leave a Google review</a></li>
           <li><a href="https://www.mws.co.nz/contact-us/coverage-area/">Coverage area</a></li>
         </ul>
